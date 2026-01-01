@@ -167,6 +167,7 @@ end
 function M.run(ns_id)
 	general.check()
 	local ft = vim.bo.filetype
+	vim.notify(ft, vim.log.levels.WARN)
 	local mapping = get_or_load_mapping(ft)
 
 	if mapping then
