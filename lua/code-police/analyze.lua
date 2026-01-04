@@ -53,9 +53,17 @@ local function get_rule_points(capture_name, captured_node, sibling, mapping)
 end
 
 local function get_body_node(node, mapping)
-	local current_sibling = node:next_named_sibling()
-	local body_set = mapping.body_set -- Use pre-calculated set
+	local body_set = mapping.body_set
 
+	local child_count = node:named_child_count()
+	for i = 0, child_count - 1 do
+		local child = node:named_child(i)
+		if body_set[child:type()] then
+			return child
+		end
+	end
+
+	local current_sibling = node:next_named_sibling()
 	while current_sibling do
 		if body_set[current_sibling:type()] then
 			return current_sibling

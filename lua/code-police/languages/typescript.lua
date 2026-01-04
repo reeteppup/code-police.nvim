@@ -4,8 +4,9 @@ return {
         (function_expression) @func_header
         (arrow_function) @func_header
         (method_definition) @func_header
+        (class_declaration) @func_header
     ]],
-	body_types = { "statement_block" },
+	body_types = { "statement_block", "class_body" },
 	nesting_list = {
 		"if_statement",
 		"for_statement",
