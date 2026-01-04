@@ -20,10 +20,10 @@ return {
 		(while_statement) @rule_loop
 		(repeat_statement) @rule_loop
 		(do_statement) @rule_loop 
-		
-		;; Pcall/Xpcall Safety Bonus
-		((function_call 
-			name: (identifier) @__name 
-			(#any-of? @__name "pcall" "xpcall")) @rule_try)
+	  ; Lua uses pcall/xpcall instead of try-catch
+    ; We match the function call name to reward safety
+    ((function_call 
+      name: (identifier) @__name 
+      (#any-of? @__name "pcall" "xpcall")) @rule_try)
 	]],
 }
