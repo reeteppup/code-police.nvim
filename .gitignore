@@ -1,0 +1,41 @@
+# --- macOS System Files ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# --- Lua & LuaRocks ---
+# Compiled Lua sources
+*.luac
+
+# LuaRocks dependencies (local tree)
+lua_modules/
+.luarocks/
+
+# Common output directories
+bin/
+obj/
+lib/
+
+# --- Editors & IDEs ---
+# VS Code
+.vscode/
+*.code-workspace
+
+# IntelliJ / Lua plugin
+.idea/
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+
+# --- Testing & Logs ---
+*.log
+luacov.stats.out
+luacov.report.out
